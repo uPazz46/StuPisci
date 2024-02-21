@@ -8,8 +8,12 @@ export default {
         stupisci_b: "#1D4064",
         stupisci_lb: "#0D6A87",
       },
+
       fontFamily: {
         font_login: "Slabo",
+      },
+      backgroundImage: {
+        sfondo: "url('/src/assets/bglogin.jpeg')",
       },
     },
   },

@@ -8,6 +8,7 @@
   background: linear-gradient(145deg, #1a3a5a, #1f446b);
   box-shadow: 12px 12px 24px #1b3c5e, -12px -12px 24px #1f446a;
 }
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;

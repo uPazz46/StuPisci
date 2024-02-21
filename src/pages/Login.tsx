@@ -7,14 +7,11 @@ export default function Login() {
       <div className="absolute shadow_login bg-stupisci_b w-screen h-40 flex justify-center">
         <img src={logo} alt="StuPisci" />
       </div>
-      <div className="font-font_login  text-white h-screen bg-white flex justify-center items-center">
-        <h1 className="absolute right-0 text-stupisci_lb text-7xl verticaltext ">
-          StuPisci
-        </h1>
+      <div className="font-font_login  text-white bg-sfondo bg-cover h-screen flex justify-center items-center">
         <form className="shadow_Login w-1/3 h-2/6 bg-stupisci_b flex-col flex justify-around items-center">
-          <h1 className="text-4xl">BENVENUTO</h1>
+          <h1 className="text-4xl">BENVENUTO!</h1>
           <input
-            className="text-black rounded-3xl p-3"
+            className="text-black rounded-xl p-3"
             type="password"
             placeholder="Inserisci codice"
           />
