@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        stupisci_y: "#E2BE40",
+        stupisci_y: { 500: "#E8BE00", 700: "#DAA507" },
         stupisci_b: "#1D4064",
+        stupisci_lb: "#0D6A87",
       },
       fontFamily: {
         font_login: "Slabo",
