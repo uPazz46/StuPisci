@@ -3,7 +3,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Manager from "./pages/Manager.tsx";
+import Permesso from "./pages/cameriere/Permesso.tsx";
+import Ordinazioni from "./pages/cameriere/Ordinazioni.tsx";
+import Menu from "./pages/cameriere/Menu.tsx";
+import Cameriere from "./pages/Cameriere.tsx";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +15,20 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/manager",
-    element: <Manager />,
+    path: "/cameriere",
+    element: <Cameriere />,
+  },
+  {
+    path: "/cameriere/Menu",
+    element: <Menu />,
+  },
+  {
+    path: "/cameriere/Permesso",
+    element: <Permesso />,
+  },
+  {
+    path: "/cameriere/Ordinazioni",
+    element: <Ordinazioni />,
   },
 ]);
 
