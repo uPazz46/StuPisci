@@ -7,6 +7,7 @@ export default {
         stupisci_y: { 500: "#E8BE00", 700: "#DAA507" },
         stupisci_b: "#1D4064",
         stupisci_lb: "#0D6A87",
+        menu: "#324158",
       },
       cursor: { fish: "url('/src/assets/fish.png'),pointer" },
 
