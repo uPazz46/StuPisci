@@ -1,140 +1,133 @@
+import "../../index.css";
+import logo from "../../assets/logo.png";
+import menu from "../../assets/menu.json";
+import Ordinazioni from "./Ordinazioni";
+import { useState } from "react";
+interface OrderType {
+  isSpecial: false;
+  id: number;
+  name: string;
+  price: string;
+  type: string;
+}
+
 export default function Menu() {
+  const [order, setOrder] = useState<OrderType[]>([]);
+  function addItem(item: OrderType) {
+    setOrder([...order, item]);
+  }
   return (
-    <div className="absolute shadow_login bg-stupisci_b w-screen h-40 flex justify-center overflow-y-scroll ">
-      <div className="text-menu ">
-        <h1>M E N U</h1>
-        <div>
-          <h1 className="text-stupisci_y-500">ANTIPASTI</h1>
-          <div className="">
-            <img src="" alt="" />
-            <h1>Scampi crudi alla “pizzaiola”</h1>
-            <h1>60,00€</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>Tonno vitellato</h1>
-            <h1>60,00 €</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>Sgombro, Avocado, Caviale e Champagne</h1>
-            <h1>80,00€</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>
-              Rane al Burro Chantilly all’Aglio, Crocchette, di Riso Zizania
-            </h1>
-            <h1>90,00 €</h1>
-            <h1></h1>
-          </div>
+    <>
+      <div className="shadow_login bg-stupisci_b w-screen h-40 flex justify-center">
+        {" "}
+        <img src={logo} alt="StuPisci" />
+      </div>
+      <div className="text-menu text w-full flex flex-col items-center">
+        <h1 className="text-7xl font-bold m-16 dancing-script">M E N U</h1>
+        <div className="w-full">
+          <h1 className="text-stupisci_y-500 text-5xl font-bold text-center mt-20 mb-16 dancing-script">
+            ANTIPASTI
+          </h1>
+          {menu.antipasti.map((menuElement) => {
+            return (
+              <div className="items-center justify-center flex flex-col">
+                <button
+                  className="hover:underline outline-none text-2xl hover:scale-125 transform duration-300"
+                  onClick={() => addItem(menuElement)}
+                >
+                  <b>{menuElement.name}</b>
+                </button>
+                <h1 className="mt-4 text-xl">{menuElement.price}</h1>
 
-          <div className="">
-            <img src="" alt="" />
-            <h1>Tartare di Tonno Rosso</h1>
-            <h1>95,00 €</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>SPECIALITA</h1>
-            <h1>StuPisci al Cubo</h1>
-            <h1>
-              Cubo di Pesce Spada, cipolla marinata, cetriolo, caviale e ostrica
-            </h1>
-            <h1>120,00€</h1>
-          </div>
+                <h1 className="my-6"></h1>
+              </div>
+            );
+          })}
         </div>
+
         <div>
-          <h1 className="text-stupisci_y-500">PRIMI PIATTI</h1>
-          <div className="">
-            <img src="" alt="" />
-            <h1>Linguina di Gragnano, calamaretti, salsa al pane di segale</h1>
-            <h1>80,00€</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>Riso Carnaroli, bottarga, midollo e limone candito</h1>
-            <h1>95,00 €</h1>
-          </div>
+          <h1 className="text-stupisci_y-500 text-5xl font-bold text-center m-16 dancing-script">
+            PRIMI PIATTI
+          </h1>
+          {menu.primi.map((menuElement) => {
+            return (
+              <div className="items-center justify-center flex flex-col">
+                <button
+                  className="text-2xl hover:underline outline-none hover:scale-125 transform duration-300"
+                  onClick={() => addItem(menuElement)}
+                >
+                  <b>{menuElement.name}</b>
+                </button>
+                <h1 className="mt-4 text-xl ">{menuElement.price}</h1>
 
-          <div className="">
-            <img src="" alt="" />
-            <h1>Tagliatelle di fagioli, cozze e cotiche</h1>
-            <h1>80,00 €</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>SPECIALITA</h1>
-            <h1>Polpo di Fulmine</h1>
-            <h1>Tentacoli al Profumo di Mare</h1>
-            <h1>120,00 €</h1>
-          </div>
-          <div className="">
-            <img src="" alt="" />
-            <h1>Cappellaccio alla genovese, quinto quarto di piccione</h1>
-            <h1>100,00 €</h1>
-          </div>
+                <h1 className="my-6"></h1>
+              </div>
+            );
+          })}
+          <h1 className="text-stupisci_y-500 text-5xl font-bold text-center m-16 dancing-script">
+            SECONDI PIATTI
+          </h1>
+          {menu.secondi.map((menuElement) => {
+            return (
+              <div className="items-center justify-center flex flex-col">
+                <button
+                  className="hover:underline outline-none text-2xl hover:scale-125 transform duration-300"
+                  onClick={() => addItem(menuElement)}
+                >
+                  <b>{menuElement.name}</b>
+                </button>
+                <h1 className="mt-4 text-xl">{menuElement.price}</h1>
+
+                <h1 className="my-6"></h1>
+              </div>
+            );
+          })}
           <div>
-            <h1 className="text-stupisci_y-500">SECONDI PIATTI</h1>
-            <div className="">
-              <img src="" alt="" />
-              <h1>Rombo chiodato, conchigliacei, alghe marine, taccole</h1>
-              <h1>110,00 €</h1>
-            </div>
-            <div className="">
-              <img src="" alt="" />
-              <h1>Branzino brulé, lattuga all’insalata</h1>
-              <h1>110,00 €</h1>
-            </div>
+            <h1 className="text-stupisci_y-500 text-5xl font-bold text-center m-16 dancing-script">
+              DESSERT
+            </h1>
+            {menu.dessert.map((menuElement) => {
+              return (
+                <div className="items-center justify-center flex flex-col">
+                  <button
+                    className="hover:underline outline-none text-2xl hover:scale-125 transform duration-300 "
+                    onClick={() => addItem(menuElement)}
+                  >
+                    <b>{menuElement.name}</b>
+                  </button>
+                  <h1 className="mt-4 text-xl">{menuElement.price}</h1>
 
-            <div className="">
-              <img src="" alt="" />
-              <h1>Triglia, zucchine alla scapece, provola affumicata</h1>
-              <h1>110,00 €</h1>
-            </div>
-            <div className="">
-              <img src="" alt="" />
-              <h1>SPECIALITA</h1>
-              <h1>StuPisci-Spada</h1>
-              <h1>
-                Scaloppine di Pesce Spada al Vino Bianco e Erbe Aromatichea
-              </h1>
-              <h1>110,00 €</h1>
-            </div>
-          </div>
-          <div>
-            <h1 className="text-stupisci_y-500">DESSERT</h1>
-            <div className="">
-              <img src="" alt="" />
-              <h1>Olio, olive e olivello</h1>
-              <h1>30,00 €</h1>
-            </div>
-            <div className="">
-              <img src="" alt="" />
-              <h1>Cioccolato, nocciola e limone </h1>
-              <h1>30,00 €</h1>
-            </div>
-            <div className="">
-              <img src="" alt="" />
-              <h1>Lampone e rafano</h1>
-              <h1>30,00 €</h1>
-            </div>
+                  <h1 className="my-6"></h1>
+                </div>
+              );
+            })}
+            <button className="hover:bg-stupisci_lb py-3 w-52 bg-stupisci_b rounded-2xl text-2xl hover:scale-90 transform duration-300 text-white my-16 self-end w-full ">
+              invia ordinazione
+              {order.length}
+            </button>
+            <div>
+          <h1 className="text-stupisci_y-500 text-5xl font-bold text-center m-16 dancing-script">
+            PRIMI PIATTI
+          </h1>
+          {menu.bevande.map((menuElement) => {
+            return (
+              <div className="items-center justify-center flex flex-col">
+                <button
+                  className="text-2xl hover:underline outline-none hover:scale-125 transform duration-300"
+                  onClick={() => addItem(menuElement)}
+                >
+                  <b>{menuElement.name} {menuElement.capacity}</b>
+                </button>
 
-            <div className="">
-              <img src="" alt="" />
-              <h1>Ananas, cocco, coriandolo</h1>
-              <h1>30,00 €</h1>
-            </div>
-            <div className="">
-              <img src="" alt="" />
-              <h1>SPECIALITA</h1>
-              <h1>StuPisci Scomposto</h1>
-              <h1>Cannolo scomposto alla ricotta</h1>
-              <h1>30,00 €</h1>
-            </div>
+                <h1 className="mt-4 text-xl ">{menuElement.price}</h1>
+
+                <h1 className="my-6"></h1>
+              </div>
+            );
+          })}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
