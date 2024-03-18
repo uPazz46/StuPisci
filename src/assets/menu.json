@@ -171,17 +171,34 @@
     {
       "isSpecial": false,
       "id": 22,
-      "name": "Coca Cola 0,50cl",
+      "name": "Coca Cola",
       "capacity": "0,50cl",
       "price": "8,00€",
       "type": "Secondi"
     },
     {
-      "isSpecial": true,
+      "isSpecial": false,
       "id": 23,
       "name": "Coca Cola Zero",
       "capacity": "0,50cl",
+      "price": "8,00€",
       "type": "Secondi"
+    },
+    {
+      "isSpecial": false,
+      "id": 24,
+      "name": "Chinotto",
+      "capacity": "0,50cl",
+      "price": "7,50€",
+      "type": "Bevande"
+    },
+    {
+      "isSpecial": false,
+      "id": 25,
+      "name": "Fanta",
+      "capacity": "0,50cl",
+      "price": "7,50€",
+      "type": "Bevande"
     }
   ]
 }

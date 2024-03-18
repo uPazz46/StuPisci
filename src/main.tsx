@@ -7,6 +7,8 @@ import Permesso from "./pages/cameriere/Permesso.tsx";
 import Ordinazioni from "./pages/cameriere/Ordinazioni.tsx";
 import Menu from "./pages/cameriere/Menu.tsx";
 import Cameriere from "./pages/Cameriere.tsx";
+import Resoconto from "./pages/cameriere/Resoconto.tsx";
+import { OrderProvider } from "./components/OrderContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,10 +32,16 @@ const router = createBrowserRouter([
     path: "/cameriere/Ordinazioni",
     element: <Ordinazioni />,
   },
+  {
+    path: "/cameriere/Resoconto",
+    element: <Resoconto />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <OrderProvider>
+      <RouterProvider router={router} />
+    </OrderProvider>
   </React.StrictMode>
 );
